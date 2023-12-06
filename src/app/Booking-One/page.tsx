@@ -11,7 +11,7 @@ export default function page() {
     console.log(new Date())
   return (
     <>
-        <div>page</div>
+        <div>Radiated Boy Concert</div>
         <DatePicker
             selected={startDate}
             onChange={(date:any) => setStartDate(date)}
