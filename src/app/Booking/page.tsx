@@ -14,6 +14,7 @@ export default function page() {
     <>
         <div>Radiated Men Concert</div>
         <DatePicker
+            className="text-black"
             selected={startDate}
             onChange={(date:any) => setStartDate(date)}
             includeDates={[new Date("2023-12-25T23:15:30"), addDays(new Date("2023-12-25T23:15:30"), 6)]}
