@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import DatePicker from "react-datepicker";
 import { addDays } from "date-fns"
+import SeatPicker from "../Utils/seatPicker"
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -18,6 +19,7 @@ export default function page() {
             includeDates={[new Date("2023-12-25T23:15:30"), addDays(new Date("2023-12-25T23:15:30"), 6)]}
             placeholderText="This only includes today and tomorrow"
         />
+        <SeatPicker/>
     </>
     ); 
 
