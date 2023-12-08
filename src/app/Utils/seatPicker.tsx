@@ -1,10 +1,11 @@
 "use client"
+import PreviousMap from 'postcss/lib/previous-map';
 import React, { useState } from 'react'
 
 export default function seatPicker() {   
     const [showSeats, setShowSeats] =useState(false)
-    const [bookedSeats,setBookSeats] = useState([])
-    let data:any[] = [] = []
+    const [bookedSeats,setBookSeats] = useState<string[]>([]); 
+    let data:string[] = []
 
 
     let numberOfSeats = 5
@@ -24,9 +25,7 @@ export default function seatPicker() {
 
     const addANewSeat = (e:any) =>{
       data.push(e.target.value)
-      setBookSeats(data => data)
-      console.log(data)
-
+      setBookSeats([...bookedSeats, e.target.value])
     }
 
   
@@ -34,7 +33,7 @@ export default function seatPicker() {
     <>
     <article>
       <h2>Select Your Seat</h2>
-      <p  className="text-black bg-white w-64" onClick={openSeatMenu} value={data}>Select:</p>
+      <input  className="text-black bg-white w-64" onClick={openSeatMenu} value={bookedSeats}/> 
       {seatingRow.map(row =>(  
         <div className={showSeats ? "grid grid-cols-5 w-32 pl-2":"hidden"} key={row}>
           {seatNo.map(Num =>(
