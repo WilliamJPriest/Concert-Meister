@@ -24,9 +24,21 @@ export default function seatPicker() {
     }
 
     const addANewSeat = (e:any) =>{
-      data.push(e.target.value)
-      setBookSeats([...bookedSeats, e.target.value])
-    }
+      console.log(e.target.value)
+      if(bookedSeats.includes(e.target.value)){
+        let checkedBookedSeats= bookedSeats.filter(checked => (
+          {e.target.value}
+        ))
+        setBookSeats([...checkedBookedSeats, e.target.value])
+        console.log(checkedBookedSeats)
+      }else{
+        setBookSeats([...bookedSeats, e.target.value])
+      }
+    
+      }
+      
+      
+
 
   
   return (
