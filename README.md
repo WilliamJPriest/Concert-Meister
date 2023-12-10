@@ -10,3 +10,7 @@ Todos
  - add sqlite database
  - brace against race conds
  - style frontend
+
+ Built With
+ - Next JS
+ 
