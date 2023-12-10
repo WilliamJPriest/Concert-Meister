@@ -19,12 +19,10 @@ export default function seatPicker() {
     }
 
     const openSeatMenu = () =>{
-      console.log("clicked")
       setShowSeats(true)
     }
 
     const addANewSeat = (e:any) =>{
-      console.log(e.target.value)
       if(bookedSeats.includes(e.target.value)){
         let data = e.target.value
         let checkedBookedSeats= bookedSeats.filter((e) => e !== data)
@@ -43,18 +41,18 @@ export default function seatPicker() {
   
   return (
     <>
-    <article>
-      <h2>Select Your Seat</h2>
-      <input  className="text-black bg-white w-64" onClick={openSeatMenu} value={bookedSeats}/> 
-      {seatingRow.map(row =>(  
-        <div className={showSeats ? "grid grid-cols-5 w-32 pl-2":"hidden"} key={row}>
-          {seatNo.map(Num =>(
-            <button onClick={(e) => addANewSeat(e)} value={row+Num+""} key={row+Num+""}>{row+Num+""}</button>
-          ))}
-        </div>
+      <article className='flex flex-col justify-center align-center text-center mx-auto'>
+        <h2>Select Your Seat</h2>
+        <input  className="text-black bg-white w-64" onClick={openSeatMenu} value={bookedSeats}/> 
+        {seatingRow.map(row =>(  
+          <div className={showSeats ? "grid grid-cols-5 w-32 pl-2":"hidden"} key={row}>
+            {seatNo.map(Num =>(
+              <button onClick={(e) => addANewSeat(e)} value={row+Num+""} key={row+Num+""}>{row+Num+""}</button>
+            ))}
+          </div>
 
-      ))}
-    </article>
+        ))}
+      </article>
     </>
   )
 }
