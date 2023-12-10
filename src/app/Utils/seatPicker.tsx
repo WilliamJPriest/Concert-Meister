@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 export default function seatPicker() {   
     const [showSeats, setShowSeats] =useState(false)
     const [bookedSeats,setBookSeats] = useState<string[]>([]); 
-    let data:string[] = []
+    let data:string
 
 
     let numberOfSeats = 5
@@ -23,7 +23,7 @@ export default function seatPicker() {
 
     const addANewSeat = (e:any) =>{
       if(bookedSeats.includes(e.target.value)){
-        let data = e.target.value
+        data = e.target.value
         let checkedBookedSeats= bookedSeats.filter((e) => e !== data)
         setBookSeats([...checkedBookedSeats])
         e.target.classList.remove("text-green-500")
