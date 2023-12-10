@@ -29,8 +29,10 @@ export default function seatPicker() {
         let data = e.target.value
         let checkedBookedSeats= bookedSeats.filter((e) => e !== data)
         setBookSeats([...checkedBookedSeats])
+        e.target.classList.remove("text-green-500")
       }else{
         setBookSeats([...bookedSeats, e.target.value])
+        e.target.classList.add("text-green-500")
       }
     
       }
