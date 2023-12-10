@@ -1,5 +1,4 @@
 "use client"
-import PreviousMap from 'postcss/lib/previous-map';
 import React, { useState } from 'react'
 
 export default function seatPicker() {   
