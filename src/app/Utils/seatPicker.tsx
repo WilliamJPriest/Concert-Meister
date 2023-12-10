@@ -26,11 +26,9 @@ export default function seatPicker() {
     const addANewSeat = (e:any) =>{
       console.log(e.target.value)
       if(bookedSeats.includes(e.target.value)){
-        let checkedBookedSeats= bookedSeats.filter(checked => (
-          {e.target.value}
-        ))
+        let data = e.target.value
+        let checkedBookedSeats= bookedSeats.filter((e:any)=> bookedSeats.includes(data))
         setBookSeats([...checkedBookedSeats, e.target.value])
-        console.log(checkedBookedSeats)
       }else{
         setBookSeats([...bookedSeats, e.target.value])
       }
