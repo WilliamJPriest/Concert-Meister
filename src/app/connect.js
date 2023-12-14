@@ -27,5 +27,8 @@ db.serialize(() => {
         return console.error(err.message);
       }
       console.log("Created items table.");
-    })})
+    })
+  
+  
+  })
     
