@@ -1,11 +1,6 @@
 "use client"
 import React, { useState } from 'react'
 
-// possible seat mapping
-// 1. Have it check the database for each row and seat num to see if it's booked (possibly really slow) caching?
-// 2. Have every row and seat number in the database for a range of dates or having dynamic dates if possible (expensive for large datasets)
-// 3. Leave it as it won't allow for someone to book another person's seat (bad user exp so I am unlikely to do it)
-
 export default function seatPicker() {   
     const [showSeats, setShowSeats] =useState(false)
     const [bookedSeats,setBookSeats] = useState<string[]>([]); 
@@ -13,7 +8,7 @@ export default function seatPicker() {
 
 
     let numberOfSeats = 5
-    const seatingRow =["A", "B","C"] //swap for ascii?
+    const seatingRow =["A", "B","C"]
     const seatNo: number[]=[]   
  
 
