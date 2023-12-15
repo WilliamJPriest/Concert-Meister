@@ -1,10 +1,11 @@
 "use client"
 import React, { useState } from 'react'
 
-export default function seatPicker() {   
+export default function seatPicker({startDate}) {   
     const [showSeats, setShowSeats] =useState(false)
     const [bookedSeats,setBookSeats] = useState<string[]>([]); 
     let data:string
+    
 
 
     let numberOfSeats = 5
@@ -19,6 +20,8 @@ export default function seatPicker() {
 
     const openSeatMenu = () =>{
       setShowSeats(true)
+      console.log(startDate)
+      //fetch seat data
     }
 
     const addANewSeat = (e:any) =>{
@@ -42,7 +45,8 @@ export default function seatPicker() {
     <>
       <article className='flex flex-col justify-center align-center text-center mx-auto'>
         <h2>Select Your Seat</h2>
-        <input  className="text-black bg-white w-64" onClick={openSeatMenu} value={bookedSeats}/> 
+        <input  className="text-black bg-white w-64" placeholder=" Selected Seats" onClick={openSeatMenu} value={bookedSeats}/>
+        {/* select outside of date it closes  */}
         {seatingRow.map(row =>(  
           <div className={showSeats ? "grid grid-cols-5 w-32 pl-2":"hidden"} key={row}>
             {seatNo.map(Num =>(

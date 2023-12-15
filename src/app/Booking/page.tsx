@@ -8,8 +8,7 @@ import SeatPicker from "../Utils/seatPicker"
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function page() {
-    const [startDate, setStartDate] = useState(new Date());
-    console.log(new Date())
+    const [startDate, setStartDate] = useState(null);
     const isWeekend = (date: number | Date) => {
       const day = getDay(date);
       return day == 0 || day ==6;
@@ -19,13 +18,15 @@ export default function page() {
       <article className='flex flex-col text-center py-4' >
           <div>Radiated Men Concert</div>
           <DatePicker
-              className="text-black"
+              className="text-black w-64"
               selected={startDate}
               filterDate={isWeekend}
               onChange={(date:any) => setStartDate(date)}
-              placeholderText="Weekends"
+              placeholderText=" Select date"
           />
-          <SeatPicker/>
+          <SeatPicker 
+          startDate={startDate}
+          />
       </article>
     </>
     ); 
