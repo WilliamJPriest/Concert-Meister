@@ -34,14 +34,22 @@ db.serialize(() => {
     const seatingRow =["A", "B","C"]
 
     for(let i = 0;i<seatingRow.length;i++){
-      for(let j =1; i <= numberOfSeats;i++){
-        db.run(`INSERT INTO seats`)
+      for(let j =0; j < numberOfSeats;j++){
+        db.run(`INSERT INTO seats (seat) VALUES ($1)`,[i]+[j],function (err) {
+          if (err) {
+            return console.error(err.message);
+          }
+          const id = this.lastID; 
+          console.log(`Rows inserted, ID ${id}`);
+        })
       }
-
     }
-  
-
-  
-  
+  db.close((err)=>{
+    if(err){
+      return console.error(err)
+    }
+    console.log("db closed")
   })
+
+})
     
