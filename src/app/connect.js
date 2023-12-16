@@ -17,17 +17,19 @@ db.serialize(() => {
   db.run(
     `CREATE TABLE IF NOT EXISTS booked (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        band TEXT,
+        seat TEXT,
         date TEXT,
-        tickets TEXT,
-        notickets int,
-        price int
-      )`,
+        price int,
+        Expires int
+      )`, 
     (err) => {
       if (err) {
         return console.error(err.message);
       }
       console.log("Created items table.");
     })
+    
   
   
   })
