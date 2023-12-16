@@ -15,7 +15,7 @@ const db = new sqlite3.Database(
 db.serialize(() => {
 
   db.run(
-    `CREATE TABLE IF NOT EXISTS booked (
+    `CREATE TABLE IF NOT EXISTS seats (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         band TEXT,
         seat TEXT,
@@ -29,7 +29,18 @@ db.serialize(() => {
       }
       console.log("Created items table.");
     })
-    
+
+    let numberOfSeats = 5
+    const seatingRow =["A", "B","C"]
+
+    for(let i = 0;i<seatingRow.length;i++){
+      for(let j =1; i <= numberOfSeats;i++){
+        db.run(`INSERT INTO seats`)
+      }
+
+    }
+  
+
   
   
   })
