@@ -21,7 +21,6 @@ export default function seatPicker({startDate}) {
     const openSeatMenu = () =>{
       setShowSeats(true)
       console.log(startDate)
-      //fetch seat data
     }
 
     const addANewSeat = (e:any) =>{
