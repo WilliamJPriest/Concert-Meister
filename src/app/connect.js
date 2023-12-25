@@ -21,7 +21,8 @@ db.serialize(() => {
         seat TEXT,
         date TEXT,
         price int,
-        Expires int
+        Expires int,
+        booked int
       )`, 
     (err) => {
       if (err) {
@@ -32,7 +33,6 @@ db.serialize(() => {
 
     let numberOfSeats = 5
     const seatingRow =["A", "B","C"]
-
     for(let i = 0;i<seatingRow.length;i++){
       for(let j =0; j < numberOfSeats;j++){
         db.run(`INSERT INTO seats (seat) VALUES ($1)`,[i]+[j],function (err) {

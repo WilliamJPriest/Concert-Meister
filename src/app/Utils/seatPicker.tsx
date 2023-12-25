@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 
 export default function seatPicker({startDate}) {   
+
     const [showSeats, setShowSeats] =useState(false)
     const [bookedSeats,setBookSeats] = useState<string[]>([]); 
 
